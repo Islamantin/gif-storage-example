@@ -1,27 +1,27 @@
-# MyApp
+# Gif Storage Example App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
+Web interface for storing gif images from [Giphy.com](https://giphy.com)\
+Search images via Giphy API; Sort, filter and download images from your collection.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.\
+Bootstrap 5.0 was used as the styles framework. 
+
+## Before you start
+* Add `environment.ts` file to the `src/environmet` directory with the following contents:
+```
+export const environment = {
+  production: false, 
+  apiKey: {KEY},
+};
+```
+ Where `{KEY}` is your 32-character API key provided by Giphy.com
+
+* Refering project's root directory run `npm install` command in CLI
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
