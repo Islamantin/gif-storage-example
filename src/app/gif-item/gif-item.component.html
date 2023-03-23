@@ -1,0 +1,13 @@
+<div class="gif-item">
+  <img [src]="item.images.fixed_height.url" [alt]="item.title" />
+  <label [innerText]="item.title"></label>
+  <div>
+    <button
+      type="button"
+      class="btn btn-link"
+      *ngFor="let action of actions"
+      (click)="action.callback(item)"
+      [innerText]="action.title"
+    ></button>
+  </div>
+</div>

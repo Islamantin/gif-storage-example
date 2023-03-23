@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Search on Giphy</h2>
+  <div class="input-group mb-3 search">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search GIFs"
+      [(ngModel)]="searchTerm"
+    />
+    <button class="btn btn-primary" (click)="searchGifs()">Search</button>
+  </div>
+
+  <div class="breaker">
+    <h3 [innerText]="searchTitle"></h3>
+  </div>
+
+  <div class="gif-container">
+    <app-gif-item
+      *ngFor="let gif of searchResults"
+      [item]="gif"
+      [actions]="getItemActions()"
+    ></app-gif-item>
+    <div class="placeholder" *ngFor="let n of getPlaceholders()"></div>
+  </div>
+</div>

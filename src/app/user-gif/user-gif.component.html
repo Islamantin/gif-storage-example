@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>Your GIF collection</h2>
+  <div class="input-group mb-3 search">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Filter GIFs by name"
+      [(ngModel)]="searchText"
+      (input)="onFilterInput()"
+    />
+  </div>
+  <div class="controlls">
+    <div>
+      <label>Sort by</label>
+      <select
+        class="form-select sort-select"
+        (change)="onSortStrategyChanged($event)"
+      >
+        <option value="newest">Newest</option>
+        <option value="oldest">Oldest</option>
+      </select>
+    </div>
+    <!-- <button type="button" class="btn btn-warning" (click)="upload()">
+      Upload ↓
+    </button> -->
+  </div>
+
+  <!-- <div
+    class="drag-drop"
+    (drop)="onDrop($event)"
+    (dragover)="onDragOver($event)"
+  > -->
+  <div>
+
+    <div *ngIf="shownGifs.length > 0" class="gif-container">
+      <app-gif-item
+        *ngFor="let gif of shownGifs"
+        [item]="gif"
+        [actions]="getItemActions()"
+      ></app-gif-item>
+      <div class="placeholder" *ngFor="let n of getPlaceholders()"></div>
+    </div>
+    <div class="no-items" *ngIf="shownGifs.length < 1">
+      <h2 *ngIf="searchText.length < 1">
+        There's no GIF images in your collection yet...
+      </h2>
+      <h3 *ngIf="searchText.length < 1">
+        <!-- Drag and drop a GIF file here or add one through the Giphy search ↑ -->
+        Add a GIF through the Giphy search ↑
+      </h3>
+      <h2 *ngIf="searchText.length > 0">
+        There's no GIF images with this search term...
+      </h2>
+    </div>
+  </div>
+</div>

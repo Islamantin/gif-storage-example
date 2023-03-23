@@ -1,0 +1,25 @@
+.gif-item {
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+  img {
+    display: block;
+    margin: auto;
+  }
+  label {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 5px;
+    font-size: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  div {
+    padding: 0 5px;
+    > button {
+      font-size: 16px;
+      padding: 0 10px 0 0;
+    }
+  }
+}
